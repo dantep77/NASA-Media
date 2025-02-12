@@ -20,6 +20,7 @@ def search_nasa(query):
 
         #Check for another page
         links = response.get("collection", {}).get("links", [])
+        print(links)
         if links[0].get("prompt") == "Next":
             url = links[0].get("href")
             response = requests.get(url)
