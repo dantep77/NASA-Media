@@ -19,9 +19,9 @@ def search_nasa(query):
         all_items.extend(response["collection"]["items"])
 
         #Check for another page
-        metadata = response["collection"]["metadata"]
-        if metadata["prompt"] == "Next":
-            url = metadata["href"]
+        links = response["collection"]["links"]
+        if links["prompt"] == "Next":
+            url = links["href"]
             response = requests.get(url)
         else:
             url = None
