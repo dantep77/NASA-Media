@@ -15,7 +15,7 @@ def search_nasa(query, page):
     if response.status_code == 200:
         return jsonify({
             response.json()["collection"]["items"],
-            response.json()["collectionn"]["metadata"]["total_hits"]
+            response.json()["collection"]["metadata"]["total_hits"]
         })
 
     return {"error": "Failed to fetch data from NASA API"}
