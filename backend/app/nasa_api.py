@@ -1,6 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
+from flask import jsonify
 
 load_dotenv()  # Load API key from .env file
 
@@ -12,6 +13,9 @@ def search_nasa(query, page):
     response = requests.get(url, params=params)
 
     if response.status_code == 200:
-        return response.json()["collection"]["items"]
+        return jsonify({
+            response.json()["collection"]["items"],
+            response.json()["collectionn"]["metadata"]["total_hits"]
+        })
 
     return {"error": "Failed to fetch data from NASA API"}
