@@ -10,4 +10,9 @@ def search():
         return jsonify({"error": "Query parameter 'q' is required"}), 400
 
     data = search_nasa(query)
-    return jsonify(data)
+    count = data.length
+
+    return jsonify({
+        "count": count,
+        "results": data
+    })
