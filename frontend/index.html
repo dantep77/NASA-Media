@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Image Search</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>NASA Image Search</h1>
+    <p>Search for stunning images from NASA's archives.</p>
+    <input type="text" id="searchQuery" placeholder="Search images..." oninput="searchNASA()">
+  </header>
+
+  <section id="results" class="results-container">
+    <!-- Image results will be injected here by JavaScript -->
+  </section>
+
+  <section class="pagination">
+    <button id="prevPage" onclick="changePage(-1)" disabled>Prev</button>
+    <span id="pageNumber">Page 1</span>
+    <button id="nextPage" onclick="changePage(1)">Next</button>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 NASA Image Search</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
