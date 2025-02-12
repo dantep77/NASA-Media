@@ -13,13 +13,13 @@ def search_nasa(query):
     response = requests.get(url, params=params)
 
     while url:
-        response = response.json()
+        json = response.json()
 
         #Get items from current page
-        all_items.extend(response["collection"]["items"])
+        all_items.extend(json["collection"]["items"])
 
         #Check for another page
-        links = response.get("collection", {}).get("links", [])
+        links = json.get("collection", {}).get("links", [])
     
         if len(links) > 0:
             url = links[0].get("href")
@@ -29,5 +29,5 @@ def search_nasa(query):
         
 
     if response.status_code == 200:
-        return response.json()
+        return all_items
     return {"error": "Failed to fetch data from NASA API"}
