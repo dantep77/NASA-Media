@@ -40,7 +40,6 @@ function displayResults(data) {
     img.src = item.links[0].href;
     img.alt = item.data[0].title;
     img.title = item.data[0].title;
-    img.style.width = "200px";
 
     resultsDiv.appendChild(img);
   });
