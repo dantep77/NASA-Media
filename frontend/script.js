@@ -35,15 +35,13 @@ function displayResults(data) {
 
   data.items.forEach(async (item) => {
     const img = document.createElement("img");
+
+    // Assign image attributes
     img.src = item.links[0].href;
-    /*
-      await new Promise((resolve) => {
-        img.onload = resolve;
-        img.onerror = resolve;
-      });
-    */
-    img.alt = item.data.title;
+    img.alt = item.data[0].title;
+    img.title = item.data[0].title;
     img.style.width = "200px";
+
     resultsDiv.appendChild(img);
   });
 }
