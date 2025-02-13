@@ -9,7 +9,7 @@ NASA_API_URL = "https://images-api.nasa.gov/search"
 
 def search_nasa(query, page):
     url = NASA_API_URL
-    params = {"q": query, "media_type": "image", "page": page, "page_size": 12}
+    params = {"title": query, "media_type": "image", "page": page, "page_size": 12}
     response = requests.get(url, params=params)
     
     if response.status_code == 200:
