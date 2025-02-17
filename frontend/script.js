@@ -69,13 +69,17 @@ function updateArrows() {
   } else {
     document.getElementById("nextPage").disabled = false;
   }
+  document.getElementById("pageNumber").innerText = "Page " + page;
 }
 
 function changePage(change) {
   page += change;
   console.log(maxPage);
   console.log(page);
-  document.getElementById("pageNumber").innerText = "Page " + page;
   updateArrows();
   searchNASA();
+}
+
+function resetPage() {
+  page = 1;
 }
