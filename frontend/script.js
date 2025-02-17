@@ -34,14 +34,26 @@ function displayResults(data) {
   }
 
   data.items.forEach(async (item) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
     const img = document.createElement("img");
+    const imgLink = document.createElement("a");
+    const title = document.createElement("h3");
 
     // Assign image attributes
     img.src = item.links[0].href;
     img.alt = item.data[0].title;
     img.title = item.data[0].title;
+    imgLink.href = img.src;
+    imgLink.target = "_blank";
 
-    resultsDiv.appendChild(img);
+    title.innerHTML = img.title;
+    title.classList.add("details");
+
+    imgLink.appendChild(img);
+    card.append(imgLink);
+    card.append(title);
+    resultsDiv.appendChild(card);
   });
 }
 

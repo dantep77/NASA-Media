@@ -52,18 +52,14 @@ body {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 5px;
+  gap: 20px;
   margin-top: 20px;
   width: 100%;
   max-width: 1200px;
 }
 
-.results-container > * {
-  max-width: 300px;
-}
-
 .card {
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -75,8 +71,7 @@ body {
 }
 
 .card img {
-  width: 100%;
-  height: auto;
+  max-width: 300px;
 }
 
 .card .details {
