@@ -46,6 +46,7 @@ function displayResults(data) {
     img.title = item.data[0].title;
     imgLink.href = img.src;
     imgLink.target = "_blank";
+    img.loading = "lazy";
 
     title.innerHTML = img.title;
     title.classList.add("details");
