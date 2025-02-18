@@ -77,6 +77,7 @@ function changePage(change) {
   page += change;
   console.log(maxPage);
   console.log(page);
+  window.scrollTo({ top: 0, behavior: "smooth"});
   updateArrows();
   searchNASA();
 }

@@ -155,7 +155,7 @@ body {
 
 .pagination #pageNumber {
   font-size: 1.2rem;
-  color: #333;
+  color: var(--tertiary-color);
 }
 
 /* Footer */
