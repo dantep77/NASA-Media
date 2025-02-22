@@ -12,7 +12,7 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   scrollbar-width: thin;
   scrollbar-gutter: stable both-edges;
   scrollbar-color: var(--secondary-color) transparent;
